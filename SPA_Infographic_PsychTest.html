@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 마음을 알고 싶을 때, 심리검사로 시작하세요</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f3f4f6;
+            color: #1e293b;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #1e3a8a, #0d9488);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-900">분당지상정신건강의학과</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-500 font-medium">종합 심리검사 안내</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-br from-blue-900 via-blue-800 to-teal-600 text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                내 마음을 알고 싶을 때,<br/>
+                <span class="text-teal-300">심리검사</span>로 시작하세요
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 font-light max-w-2xl mx-auto mb-8">
+                환자 및 내원객 여러분의 심리적 건강과 깊이 있는 자기 이해를 돕기 위해 종합 심리검사를 새롭게 도입했습니다.
+            </p>
+            <a href="#why-needed" class="inline-block bg-white text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                자세히 알아보기 👇
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <section id="why-needed" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">왜 이 검사가 필요할까요?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    막연했던 감정과 행동을 객관적인 데이터로 확인하고, 잠재된 문제를 발견하여 정확한 치료 방향을 설정합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-blue-600 card-hover">
+                    <div class="text-5xl mb-4 text-center">🔍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">1. 객관적인 자기 이해</h3>
+                    <p class="text-gray-600 text-center">
+                        평소 막연했던 감정, 성격, 행동 양식, 대인관계 패턴 등을 객관적인 지표로 확인하여 자신을 더 깊이 이해할 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-teal-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🌱</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">2. 잠재적 문제 발견</h3>
+                    <p class="text-gray-600 text-center">
+                        스스로 인지하지 못했던 스트레스 취약성이나 심리적 어려움의 징후를 조기에 발견하여 대처할 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8 border-t-4 border-orange-500 card-hover">
+                    <div class="text-5xl mb-4 text-center">🧭</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">3. 정확한 치료 방향</h3>
+                    <p class="text-gray-600 text-center">
+                        검사 결과를 바탕으로 현재 겪고 있는 어려움에 대한 가장 효과적인 치료 및 상담 방향을 설정합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 text-center">검사 전후 명확성 변화</h3>
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 text-center mt-4">
+                        * 심리검사를 통해 얻을 수 있는 자기 이해와 치료 방향의 명확성 향상을 시각화한 자료입니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 text-center">잠재적 문제 조기 발견율</h3>
+                    <div class="chart-container" id="plotlyBarChart"></div>
+                    <p class="text-sm text-gray-500 text-center mt-4">
+                        * 전문적인 검사는 일반적인 자각보다 숨겨진 스트레스 요인을 훨씬 효과적으로 감지합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="bg-blue-50 rounded-3xl p-8 md:p-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">검사의 특징</h2>
+                <p class="text-lg text-gray-600">
+                    복잡한 절차 없이 간편하게, 하지만 결과는 깊이 있고 포괄적입니다.
+                </p>
+            </div>
+
+            <div class="
