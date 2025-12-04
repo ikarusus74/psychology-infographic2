@@ -1,1 +1,1 @@
-# psychology-infographic2
+종합 심리 검사 안내
